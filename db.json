@@ -2,27 +2,27 @@
     {
         "id": 1,
         "title": "Learn Node.js",
-        "completed": true
+        "completed": false
     },
     {
         "id": 2,
         "title": "Learn JavaScript",
-        "completed": false
+        "completed": true
     },
     {
         "id": 3,
         "title": "Learn TypeScript",
-        "completed": true
+        "completed": false
     },
     {
         "id": 4,
         "title": "Learn HTML",
-        "completed": false
+        "completed": true
     },
     {
         "id": 5,
         "title": "Learn mamad",
-        "completed": false
+        "completed": true
     },
     {
         "id": 6,

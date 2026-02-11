@@ -56,7 +56,7 @@ router.get('/', (req, res) => {
 
             <div class="row mb-4">
                 <div class="col">
-                    <ul class="list-group lh-lg">
+                    <ul class="list-group lh-lg" id="tasks-list">
                         ${tasks.map(task => `
                             <li class="list-group-item d-flex bg-light">
                                 <span class="flex-grow-1 d-flex align-items-center">
@@ -65,9 +65,9 @@ router.get('/', (req, res) => {
                                         >${task.completed ? 'Completed' : 'In progress'}</span
                                     >
                                 </span>
-                                <button class="btn btn-sm ${task.completed ? 'btn-secondary' : 'btn-success'} me-3 toggle-btn">Toggle</button>
-                                <button class="btn btn-sm btn-primary me-3 edit-btn">Edit</button>
-                                <button class="btn btn-sm btn-danger delete-btn">Delete</button>
+                                <button class="btn btn-sm ${task.completed ? 'btn-secondary' : 'btn-success'} me-3 toggle-btn" data-id="${task.id}">Toggle</button>
+                                <button class="btn btn-sm btn-primary me-3 edit-btn" data-id="${task.id}">Edit</button>
+                                <button class="btn btn-sm btn-danger delete-btn" data-id="${task.id}">Delete</button>
                             </li>
                         `).join('')}
                     </ul>

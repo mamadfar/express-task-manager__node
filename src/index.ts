@@ -12,7 +12,8 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const app = express()
 
 app.use(express.static(path.join(__dirname, '..', 'public')))
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({extended: false})); //? to parse form data - usually used in HTML form submissions
+app.use(express.json()); //? to parse JSON data - usually used in API requests
 
 app.use(GetRoute)
 app.use(PostRoute)

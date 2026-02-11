@@ -58,7 +58,7 @@ export default class Task {
         }
     }
 
-    static getTaskById(id: number): ITask | false {
+    static getTaskById(id: number): Task | false {
         const data = DB.getTaskById(id);
         if (data) {
             const task = new Task(data.title, data.completed);
@@ -69,7 +69,7 @@ export default class Task {
         }
     }
 
-    static getTaskByTitle(title: string): ITask | false {
+    static getTaskByTitle(title: string): Task | false {
         const data = DB.getTaskByTitle(title);
         if (data) {
             const task = new Task(data.title, data.completed);
@@ -80,7 +80,7 @@ export default class Task {
         }
     }
 
-    static getAllTasks(rawObject = false): ITask[] {
+    static getAllTasks(rawObject = false): ITask[] | Task[] {
         const data = DB.getAllTasks();
         if (rawObject) {
             return data;
