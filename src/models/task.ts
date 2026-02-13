@@ -4,7 +4,7 @@ import util from 'util'
 import chalk from 'chalk'
 
 import DB from './db.js'
-import { ITask } from './types/task.type.js';
+import { ITask } from '../types/task.type.js';
 
 export default class Task {
     #id = 0;

@@ -1,9 +1,12 @@
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 import chalk from 'chalk';
-import fs from 'fs'
-import type { ITask } from './types/task.type.js';
+import type { ITask } from '../types/task.type.js';
 
-const filename = process.env.DB_FILE || 'db.json';
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const filename = path.join(__dirname, process.env.DB_FILE || 'db.json');
 
 const warn = chalk.yellowBright.bold;
 const success = chalk.greenBright.bold;
