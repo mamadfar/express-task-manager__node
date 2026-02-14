@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 
-import { rootPath } from "../index.js";
 import Task from "../models/task.js";
 import DB from "../models/db.js";
 
@@ -8,7 +7,7 @@ export default class TaskController {
   static homeController(req: Request, res: Response) {
     const tasks = Task.getAllTasks();
 
-    res.sendFile(rootPath + "/views/index.html");
+    res.render("index", { tasks });
   }
   static addTaskController(req: Request, res: Response) {
     if (req.body.title) {

@@ -2,7 +2,7 @@ const tasksList = document.getElementById("tasks-list");
 
 tasksList.addEventListener("click", async (event) => {
   const target = event.target;
-  const id = Number(target.dataset.id);
+  const id = parseInt(target.parentElement.dataset.id);
 
   if (target.classList.contains("toggle-btn")) {
     try {
@@ -59,6 +59,10 @@ tasksList.addEventListener("click", async (event) => {
         if (res.data.success) {
           //   location.reload();
           target.parentElement.remove();
+          if(!document.querySelectorAll("li").length) {
+            const ul = document.querySelector('ul');
+            ul.outerHTML = `<h2 class="text-center">No tasks yet. Please add some tasks.</h2>`;
+          }
         } else {
           alert(res.data);
         }
